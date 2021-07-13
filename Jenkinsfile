@@ -15,14 +15,12 @@ pipeline {
         script {
           kubernetesDeploy(configs: "nginx.yaml", kubeconfigId: "kubeConfig")
         }
-        post {
-            success{
-                emailext body: 'Deployment is successful', recipientProviders: [developers()], subject: 'playjenkins', to: 'dheeraj.tiwari@afourtech.com'
-            }
-        }
+          post {
+              success{
+                  emailext body: 'Deployment is successful', recipientProviders: [developers()], subject: 'playjenkins', to: 'dheeraj.tiwari@afourtech.com'
+              }
+          }
       }
     }
-
   }
-
 }
