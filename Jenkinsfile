@@ -20,7 +20,6 @@ pipeline {
                   emailext body: 'Deployment is successful', recipientProviders: [developers()], subject: 'playjenkins', to: 'dheeraj.tiwari@afourtech.com'
               }
           }
-      }
+       }
     }
-  }
 }
